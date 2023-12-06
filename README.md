@@ -109,7 +109,25 @@ NT hash:           e614b958df9df49ec094b8730f0bb1ca
 password:          bradtest
 ```
 
-Alternatively MSCHAPv2 credentials are outputted in john the rippers NETNTLM format. 
+Alternatively MSCHAPv2 credentials are outputted in john the rippers and hashcat NETNTLM format. 
+
+# Bruteforce with hashcat
+
+In hashcat, the hash mode for mschapv2 is 5500 - NetNTLMv1
+
+```
+hashcat -a 0 -m 5500 hashes.txt wordlist.txt -O -w 3
+```
+
+# Configure Autoboot
+
+Copy hostapd-wpe.service to /usr/lib/systemd/system/ and enable service.
+
+```
+cp hostapd-wpe.service /usr/lib/systemd/system/
+systemctl enable hostapd-wpe
+systemctl start hostapd-wpe
+```
 
 ## Troubleshooting
 
@@ -124,16 +142,6 @@ One of the possible reasons is that other processes are using the interface. Run
 ### The log is not saved when the program exits abnormally
 
 Add `fflush(wpe_conf.wpe_logfile_fp);` to the last line of the wpe_log_chalresp() function in hostapd-2.10/src/wpe/wpe.c
-
-# Configure Autoboot
-
-Copy hostapd-wpe.service to /usr/lib/systemd/system/ and enable service.
-
-```
-cp hostapd-wpe.service /usr/lib/systemd/system/
-systemctl enable hostapd-wpe
-systemctl start hostapd-wpe
-```
 
 # EAP-Success
 
