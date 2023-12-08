@@ -117,7 +117,7 @@ In hashcat, the hash mode for mschapv2 is 5500 - NetNTLMv1
 
 ```
 hashcat -a 0 -m 5500 hashes.txt wordlist.txt -r rules/rockyou-30000.rule -O -w 3
-hashcat -a 3 -m 5500 hashes.txt masks/rockyou-1-60.hcmask --O -w 3
+hashcat -a 3 -m 5500 hashes.txt masks/rockyou-1-60.hcmask -O -w 3
 ```
 
 # Configure Autoboot
