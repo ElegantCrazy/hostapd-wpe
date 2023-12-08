@@ -3930,7 +3930,7 @@ diff '--color=auto' -rupN hostapd-2.10/src/wpe/Makefile hostapd-2.10-wpe/src/wpe
 diff '--color=auto' -rupN hostapd-2.10/src/wpe/wpe.c hostapd-2.10-wpe/src/wpe/wpe.c
 --- hostapd-2.10/src/wpe/wpe.c	1970-01-01 00:00:00.000000000 +0000
 +++ hostapd-2.10-wpe/src/wpe/wpe.c	2022-02-21 23:29:30.160000000 +0000
-@@ -0,0 +1,232 @@
+@@ -0,0 +1,233 @@
 +/*
 +    wpe.c - 
 +        brad.antoniewicz@foundstone.com
