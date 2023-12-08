@@ -122,10 +122,10 @@ hashcat -a 3 -m 5500 hashes.txt masks/rockyou-1-60.hcmask -O -w 3
 
 # Configure Autoboot
 
-Copy hostapd-wpe.service to /usr/lib/systemd/system/ and enable service.
+Copy hostapd-wpe.service to /etc/systemd/system/ and enable service.
 
 ```
-cp hostapd-wpe.service /usr/lib/systemd/system/
+cp hostapd-wpe.service /etc/systemd/system/
 systemctl enable hostapd-wpe
 systemctl start hostapd-wpe
 ```
